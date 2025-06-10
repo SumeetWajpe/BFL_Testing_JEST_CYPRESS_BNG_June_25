@@ -31,7 +31,7 @@ xdescribe("test suite for addition", () => {
   });
 });
 
-describe("a sample test suite", () => {
+xdescribe("a sample test suite", () => {
   it("should pass", () => {
     expect(true).toBe(true);
   });
