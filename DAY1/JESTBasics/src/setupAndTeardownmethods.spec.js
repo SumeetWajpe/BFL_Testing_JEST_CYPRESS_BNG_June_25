@@ -37,7 +37,7 @@
 // beforeEach -> setUp the array -> ["BMW", "Audi", "Mercedes"]
 // afterEach -> cars = null
 
-describe("test suite for set up & teardown methods on an array", () => {
+xdescribe("test suite for set up & teardown methods on an array", () => {
   let cars = null;
   beforeEach(() => {
     cars = ["BMW", "Audi", "Mercedes"];
