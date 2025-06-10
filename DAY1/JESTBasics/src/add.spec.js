@@ -11,7 +11,8 @@ const Add = require("./add");
 // });
 
 // Test suite & test case
-describe("test suite for addition", () => {
+// fit, xit, xdescribe, fdescribe
+xdescribe("test suite for addition", () => {
   it("adds two numbers", () => {
     // Arrange
     let result;
@@ -19,5 +20,19 @@ describe("test suite for addition", () => {
     result = Add(10, 20);
     // Assert
     expect(result).toBe(30);
+  });
+  it("adds two strings", () => {
+    // Arrange
+    let result;
+    // Act
+    result = Add("Hello", "JEST");
+    // Assert
+    expect(result).toBe("HelloJEST");
+  });
+});
+
+describe("a sample test suite", () => {
+  it("should pass", () => {
+    expect(true).toBe(true);
   });
 });
