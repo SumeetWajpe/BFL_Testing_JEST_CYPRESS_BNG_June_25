@@ -11,7 +11,10 @@ describe("test suite for matchers", () => {
     expect([1, 2, 3]).not.toContain(20);
     // expect("Hello JEST").toContain("JEST");
   });
-  fit("tests for to Match matcher", () => {
+  it("tests for to Match matcher", () => {
     expect("Hello JEST").toMatch(/JEST/); // uses regex
+  });
+  fit("tests for toBeCloseTo matcher", () => {
+    expect(3).toBeCloseTo(2.99999); // checks for floating point numbers
   });
 });
