@@ -1,6 +1,4 @@
-function Add(x, y) {
-  return x + y;
-}
+const Add = require("./add");
 
 test("adds 10 + 20 to equal 30", () => {
   // Arrange
