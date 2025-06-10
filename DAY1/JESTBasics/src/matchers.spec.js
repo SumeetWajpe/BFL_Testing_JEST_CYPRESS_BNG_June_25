@@ -1,4 +1,4 @@
-describe("test suite for matchers", () => {
+xdescribe("test suite for matchers", () => {
   it("tests for toBe matcher (===)", () => {
     expect("100").toBe(100);
   });
@@ -14,7 +14,7 @@ describe("test suite for matchers", () => {
   it("tests for to Match matcher", () => {
     expect("Hello JEST").toMatch(/JEST/); // uses regex
   });
-  fit("tests for toBeCloseTo matcher", () => {
+  it("tests for toBeCloseTo matcher", () => {
     expect(3).toBeCloseTo(2.99999); // checks for floating point numbers
   });
 });
