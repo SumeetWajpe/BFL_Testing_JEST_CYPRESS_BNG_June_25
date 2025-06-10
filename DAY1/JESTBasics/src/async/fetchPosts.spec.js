@@ -15,4 +15,29 @@ describe("test suite for tesing async code with promise", () => {
       expect(postsResult.data[0]).toEqual(mockResult);
     });
   });
+
+  //   it("test for async promise fetchPosts returns with async/await", async () => {
+  //     var mockResult = {
+  //       userId: 1,
+  //       id: 1,
+  //       title:
+  //         "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+  //       body: "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
+  //     };
+  //     var postsResult = await posts.fetchPosts();
+  //     expect(postsResult.data[0]).toEqual(mockResult);
+  //   });
+
+  // JEST
+
+  fit("tests async code using promise with methods given by JEST", () => {
+    var mockResult = {
+      userId: 1,
+      id: 1,
+      title:
+        "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+      body: "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
+    };
+    return expect(posts.fetchPostWithId(1)).resolves.toEqual(mockResult);
+  });
 });
