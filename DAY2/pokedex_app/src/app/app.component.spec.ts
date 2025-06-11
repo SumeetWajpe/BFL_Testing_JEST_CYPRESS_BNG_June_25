@@ -9,10 +9,12 @@ describe("test suite for AppComponent", () => {
       declarations: [AppComponent],
       imports: [RouterTestingModule],
       providers: [LoaderService],
-    }).compileComponents();
+    }).compileComponents(); // compile the component and its template & styles
     // create an instance of the AppComponent
-    const fixture = TestBed.createComponent(AppComponent);
-    const appInstance = fixture.componentInstance; // <app-component>
+    const fixture = TestBed.createComponent(AppComponent); // instantiation of App Component
+    // fixture is a wrapper around the component instance
+    const appInstance = fixture.componentInstance; // get component instance from the fixture
+    // check if the component instance is created successfully
     expect(appInstance).toBeTruthy();
   });
 });
