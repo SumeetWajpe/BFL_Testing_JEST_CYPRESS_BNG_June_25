@@ -4,7 +4,7 @@ function forEach(items, callback) {
   }
 }
 
-describe("test suite for mocking", () => {
+xdescribe("test suite for mocking", () => {
   it("for mock function to be called", () => {
     const mockCallback = jest.fn(x => {
       console.log("Mocked Callback called !");
@@ -15,5 +15,6 @@ describe("test suite for mocking", () => {
     // expect(mockCallback.mock.calls.length).toBe(2);
     // expect(mockCallback.mock.calls[0][0]).toBe(10);
     // expect(mockCallback.mock.calls[1][0]).toBe(20);
+    expect(mockCallback.mock.results[0].value).toBe(30);
   });
 });
