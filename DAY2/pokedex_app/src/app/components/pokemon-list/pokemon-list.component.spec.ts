@@ -13,6 +13,7 @@ import {
 } from "@angular/common/http/testing";
 import { FormsModule } from "@angular/forms";
 import { NgMultiSelectDropDownModule } from "ng-multiselect-dropdown";
+import { of } from "rxjs";
 
 describe("test suite for PokemonList Component", () => {
   let compInstance: PokemonListComponent;
@@ -40,8 +41,21 @@ describe("test suite for PokemonList Component", () => {
     fixture = TestBed.createComponent(PokemonListComponent);
     compInstance = fixture.componentInstance;
   });
-  it("tess if DI framework creates the service instance & its dependencies", () => {
+  it("tests if DI framework creates the service instance & its dependencies", () => {
     let servInstance = fixture.debugElement.injector.get(PokemonService);
     expect(servInstance).toBeTruthy();
+  });
+
+  fit("mocks getPokemonData method", () => {
+    compInstance.pokemonCount = 2;
+    compInstance.pokemonList = [{ name: "pikachu" }];
+    let servInstance = fixture.debugElement.injector.get(PokemonService); // accessing the service instance created by Angular DI framework
+
+    jest
+      .spyOn(servInstance, "getPokemonData")
+      .mockReturnValue(of({ count: 2, results: [{ name: "pikachu" }] }));
+
+    compInstance.getPokemonList();
+    expect(servInstance.getPokemonData).toHaveBeenCalled();
   });
 });
