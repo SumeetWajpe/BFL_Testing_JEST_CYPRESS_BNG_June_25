@@ -10,3 +10,6 @@ describe("test suite for matchers", () => {
         
     })
 });
+
+# Angular and Jest Dependencies
+npm i jest jest-preset-angular @types/jest --save-dev
