@@ -18,6 +18,14 @@ describe("test suite for Lambdatest.io", () => {
     cy.visit(
       "https://ecommerce-playground.lambdatest.io/index.php?route=account/login",
     );
-    cy.fixture("login").then(data => console.log(data));
+    cy.fixture("login").then(data => {
+      cy.get("#input-email").type(data.email);
+      cy.get("#input-password").type(data.pwd);
+      cy.get("form > .btn").click();
+      cy.url().should(
+        "eq",
+        "https://ecommerce-playground.lambdatest.io/index.php?route=account/account",
+      );
+    });
   });
 });
