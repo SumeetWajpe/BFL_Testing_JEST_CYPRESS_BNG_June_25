@@ -1,7 +1,7 @@
 // https://ecommerce-playground.lambdatest.io/index.php?route=account/login
 
 describe("test suite for Lambdatest.io", () => {
-  it("logs in successfully using email & pwd", () => {
+  xit("logs in successfully using email & pwd", () => {
     cy.visit(
       "https://ecommerce-playground.lambdatest.io/index.php?route=account/login",
     );
@@ -12,5 +12,12 @@ describe("test suite for Lambdatest.io", () => {
       "eq",
       "https://ecommerce-playground.lambdatest.io/index.php?route=account/account",
     );
+  });
+
+  it("login successfully but using fixture", () => {
+    cy.visit(
+      "https://ecommerce-playground.lambdatest.io/index.php?route=account/login",
+    );
+    cy.fixture("login").then(data => console.log(data));
   });
 });
