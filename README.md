@@ -13,3 +13,7 @@ describe("test suite for matchers", () => {
 
 # Angular and Jest Dependencies
 npm i jest jest-preset-angular @types/jest --save-dev
+
+# Lambda test URL
+Main -  https://ecommerce-playground.lambdatest.io/
+Login - https://ecommerce-playground.lambdatest.io/index.php?route=account/login
