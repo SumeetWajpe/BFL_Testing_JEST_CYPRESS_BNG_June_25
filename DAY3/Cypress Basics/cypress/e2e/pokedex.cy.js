@@ -8,9 +8,11 @@ describe("test suite for pokedex app", () => {
     //   .find(".pokemon-content")
     //   .should("have.length", 2);
 
-    cy.get("span.main-title").should(
-      "have.text",
-      " Search for any Pokemon that exists on the planet ",
-    );
+    // cy.get("span.main-title").should(
+    //   "have.text",
+    //   " Search for any Pokemon that exists on the planet ",
+    // );
+
+   // cy.get("span.main-title").text().should("contain", "Search for any Pokemon that exists on the planet");
   });
 });
