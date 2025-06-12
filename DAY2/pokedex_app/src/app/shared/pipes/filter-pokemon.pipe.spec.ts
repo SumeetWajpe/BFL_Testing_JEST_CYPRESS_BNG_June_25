@@ -41,4 +41,32 @@ describe("test suite for Filter Pokemon Pipe", () => {
     // Expect the result to be the same as the input array
     expect(result).toEqual(pokemonArr);
   });
+  fit("should return the filtered array if searchText is applied", () => {
+    // mocked Result & input array
+    const pokemonArr = [
+      {
+        id: 1,
+        name: "Pikachu",
+        types: [{ type: { name: "electric" } }],
+      },
+      {
+        id: 2,
+        name: "Bulbasaur",
+        types: [{ type: { name: "grass" } }],
+      },
+      {
+        id: 3,
+        name: "Charmander",
+        types: [{ type: { name: "fire" } }],
+      },
+    ];
+
+    const args = { searchText: "bul", types: [], genders: [] }; // search criteria
+    // Call the pipe transform method
+    const result = pipe.transform(pokemonArr, args);
+    // Expect the result to be the same as the input array
+    expect(result).toEqual([
+      { id: 2, name: "Bulbasaur", types: [{ type: { name: "grass" } }] },
+    ]);
+  });
 });
