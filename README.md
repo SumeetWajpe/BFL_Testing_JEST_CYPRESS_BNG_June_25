@@ -21,3 +21,6 @@ Login - https://ecommerce-playground.lambdatest.io/index.php?route=account/login
 // Test if Url -> https://ecommerce-playground.lambdatest.io/index.php?route=account/account
 
 cy.url().should("eq","https://ecommerce-playground.lambdatest.io/index.php?route=account/account")
+
+# Cypress Angular Testing Examples
+https://docs.cypress.io/app/component-testing/angular/overview
